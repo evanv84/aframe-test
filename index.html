@@ -1,0 +1,71 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Web VR</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <script src="js/pace.min.js"></script>
+        <link rel="stylesheet" href="css/main.min.css">
+        <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <script src="https://use.fontawesome.com/97c414d8d5.js"></script>
+        <script src="js/aframe.min.js"></script>
+
+
+    </head>
+    <body>
+
+        <nav>
+            <div class="icon"><i class="fa fa-navicon"></i></div>
+<!--             <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contacts</a></li>
+            </ul> -->
+        </nav>
+
+        <a-scene>
+            <a-assets>
+                <img id="pano" src="assets/panorama.jpg">
+                <img id="pano2" src="assets/panorama-2.jpg">
+                <img id="pano3" src="assets/panorama-3.jpg">
+                <img id="webvr" src="assets/logo.png">
+                <img id="prev" src="assets/prev-location.png">
+                <img id="next" src="assets/next-location.png">
+                <img id="boxtex" src="assets/box-tex.jpg">
+                <a-asset-item id="sculpture" src="assets/sculpture.dae"></a-asset-item>
+            </a-assets>
+            <a-light type="spot" color="#333" position="-20 0 0"></a-light>
+            <a-light type="point" color="#aaa" position="0 5 0"></a-light>
+            <a-sky src="#pano"></a-sky>
+            <a-camera position="100 0 0" look-controls="enabled: true" wasd-controls="fly: true" camera="fov: 80; zoom: 1" >
+                <a-cursor color="#fff" fuse="true" max-distance="20"></a-cursor>
+            </a-camera>
+            <a-image id="logo" src="#webvr" width="10" height="10" position="-52 25 -35" rotation="0 0 0" scale="0 0 0">
+                <a-animation attribute="scale" from="0 0 0" to="0.9 0.9 0.9" begin="450" easing="ease-in-out"></a-animation>
+            </a-image>
+            <a-image id="prevLoc" src="#prev" width="15" height="5" position="50 6 -5" rotation="0 -90 0" scale="0 0 0">
+                <a-animation attribute="scale" from="0 0 0" to="1 1 1" begin="1200" easing="ease-in-out"></a-animation>
+                <a-animation attribute="scale" begin="prevshrink" to="0 0 0" easing="ease-in-out-elastic"></a-animation>
+            </a-image>
+            <a-image id="nextLoc" src="#next" width="15" height="5" position="50 0 -5" rotation="0 -90 0" scale="0 0 0">
+                <a-animation attribute="scale" from="0 0 0" to="1 1 1" begin="850" easing="ease-in-out"></a-animation>
+                <a-animation attribute="scale" begin="nextshrink" to="0 0 0" easing="ease-in-out-elastic"></a-animation>
+            </a-image>
+            <a-collada-model src="#sculpture" position="-30 0 6">
+                <a-animation attribute="rotation" from="0 0 0" to="0 360 0" dur="10000" repeat="indefinite" easing="linear"></a-animation>
+            </a-collada-model>
+            <a-entity geometry="primitive: box" material="src: #boxtex; color: #696969; roughness: 1; metalness: 0" position="90 -15 70" scale="30 30 30">
+            </a-entity>
+        </a-scene>
+
+
+        <!-- jQuery --> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <!-- Core -->
+        <script src="js/main.min.js"></script>
+    </body>
+</html>

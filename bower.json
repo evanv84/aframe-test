@@ -1,0 +1,17 @@
+{
+  "name": "webVR tut",
+  "description": "",
+  "main": "",
+  "authors": [
+    "i.i."
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Web VR</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="../js/pace.min.js"></script>
+        <link rel="stylesheet" href="../css/main.min.css">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <script src="https://use.fontawesome.com/97c414d8d5.js"></script>
+        <script src="../js/aframe.min.js"></script>
+
+
+    </head>
+    <body>
+
+        <nav>
+            <div class="icon"></div>
+        </nav>
+
+        <a-scene>
+            <a-assets>
+                <img id="pano3" src="../assets/panorama-3.jpg">
+                <img id="webvr" src="../assets/logo.png">
+                <img id="prev" src="../assets/prev-location.png">
+                <img id="next" src="../assets/next-location.png">
+            </a-assets>
+            <a-light type="spot" color="#333" position="-20 0 0"></a-light>
+            <a-light type="point" color="#aaa" position="0 5 0"></a-light>
+            <a-sky src="#pano3"></a-sky>
+            <a-entity position="0 0 0">
+                <a-camera>
+                    <a-cursor color="#fff"></a-cursor>
+                </a-camera>
+            </a-entity>
+            <a-image id="logo" src="#webvr" width="10" height="10" position="-52 25 -35" rotation="0 0 0" scale="0 0 0">
+                <a-animation attribute="scale" from="0 0 0" to="0.9 0.9 0.9" begin="450" easing="ease-in-out"></a-animation>
+            </a-image>
+            <a-image id="prevLoc3" src="#prev" width="15" height="5" position="50 30 80" rotation="0 -180 0" scale="0 0 0">
+                <a-animation attribute="scale" from="0 0 0" to="1 1 1" begin="1200" easing="ease-in-out"></a-animation>
+                <a-animation attribute="scale" begin="prevshrink" to="0 0 0" easing="ease-in-out-elastic"></a-animation>
+            </a-image>
+            <a-image id="nextLoc3" src="#next" width="15" height="5" position="30 30 80" rotation="0 -180 0" scale="0 0 0">
+                <a-animation attribute="scale" from="0 0 0" to="1 1 1" begin="850" easing="ease-in-out"></a-animation>
+                <a-animation attribute="scale" begin="nextshrink" to="0 0 0" easing="ease-in-out-elastic"></a-animation>
+            </a-image>
+        </a-scene>
+
+
+        <!-- jQuery --> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <!-- Core -->
+        <script src="../js/scene-3.min.js"></script>
+    </body>
+</html>
